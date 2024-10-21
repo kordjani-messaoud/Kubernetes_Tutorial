@@ -1,0 +1,37 @@
+# Deployment & Service file
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+        name: webapp-deployment
+        labels:
+                app: webapp # More Identification for the Deployment
+spec:
+        replicas: 1
+        selector: # Allow to know which Pods blong to which this Deployment
+                matchLabels:  # We are using label matching
+                        app: webapp 
+        templates:
+                metadata:
+                        labels: # Identify a group of Pods
+                                app: webapp  # this label need to match those specified above
+                        spec:
+                                containers:
+                                        - name: webapp
+                                          image: nanajanashia/k8s-demo-app:v1.0
+                                          ports:
+                                                  - containerPort: 3000
+
+---
+
+apiVersion: app/v1
+kind: Service
+metadata:
+        name: webapp-service
+spec:
+        selector: # Allow to know which Pod this Service belong lskdjf
+                app: webapp
+        ports:
+                - protocol: TCP
+                  port: 3000 # Service Port
+                  targetPort: 3000 # Pod's port
