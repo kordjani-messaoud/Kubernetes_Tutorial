@@ -1,5 +1,4 @@
-# Deployment & Service file
-
+# Deployment
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -24,6 +23,7 @@ spec:
 
 ---
 
+# Service
 apiVersion: app/v1
 kind: Service
 metadata:
