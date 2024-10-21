@@ -20,6 +20,18 @@ spec:
                                           image: mongo:8.0.1
                                           ports:
                                                   - containerPort: 27017
+                                          env:
+                                                  - name: MONGO_INITDB_ROOT_USERNAME
+                                                    valueFrom:
+                                                            secretKeyRef:
+                                                                    name: mongo-secret
+                                                                    key: mongo-user
+
+                                                  - name: MONGO_INITDB_ROOT_PASSWORD
+                                                    valueFrom:
+                                                            secreKeyRef:
+                                                                    name: mongo-secret
+                                                                    key: mongo-password
 
 ---
 
