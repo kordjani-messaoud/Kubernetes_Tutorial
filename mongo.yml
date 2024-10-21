@@ -41,6 +41,7 @@ kind: Service
 metadata:
         name: mongo-service
 spec:
+        type: ClusterIP
         selector: # Allow to know which Pod this Service belong lskdjf
                 app: mongo
         ports:
