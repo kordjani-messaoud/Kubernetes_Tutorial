@@ -1,0 +1,7 @@
+# ConfigMap file that store configuration data that are not secret
+apiVersion: v1
+kind: ConfigMap
+metadata:
+        name: mongo-config
+data:
+        mongo-url: mongo-service

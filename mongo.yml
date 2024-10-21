@@ -1,0 +1,37 @@
+# Deployment & Service file
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+        name: mongo-deployment
+        labels:
+                app: mongo # More Identification for the Deployment
+spec:
+        replicas: 1
+        selector: # Allow to know which Pods blong to which this Deployment
+                matchLabels:  # We are using label matching
+                        app: mongo 
+        templates:
+                metadata:
+                        labels: # Identify a group of Pods
+                                app: mongo  # this label need to match those specified above
+                        spec:
+                                containers:
+                                        - name: mongo
+                                          image: mongo:8.0.1
+                                          ports:
+                                                  - containerPort: 27017
+
+---
+
+apiVersion: app/v1
+kind: Service
+metadata:
+        name: mongo-service
+spec:
+        selector: # Allow to know which Pod this Service belong lskdjf
+                app: mongo
+        ports:
+                - protocol: TCP
+                  port: 8080 # Service Port
+                  targetPort: 27017 # Pod's port
