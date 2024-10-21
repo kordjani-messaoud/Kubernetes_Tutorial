@@ -45,9 +45,11 @@ kind: Service
 metadata:
         name: webapp-service
 spec:
+        type: NodePort
         selector: # Allow to know which Pod this Service belong lskdjf
                 app: webapp
         ports:
                 - protocol: TCP
                   port: 3000 # Service Port
                   targetPort: 3000 # Pod's port
+                  nodePort: 30100 # Allow external access have to be in range [30000, 32767]
