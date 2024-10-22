@@ -5,8 +5,9 @@ This repository is dedicated to my journey of learning orchestration using **Kub
 ## Purpose
 The goal of this project is to develop a deep understanding of Kubernetes concepts, including container orchestration, by using Minikube. Through this tutorial, I'm going to:
 
-- Installe **Minikube** and **cubectl** on a Redhat 8 linux server (virtual machine).
-- Deploye a MongoDB database and a web app on a **Minikube** node.
+- Install **Minikube** and **Kubectl** on a Redhat 8 linux server (virtual machine).
+- Deploye a web application with a MongoDB database in Kubernetes cluster.
+- Learn some Kubectl commands.
 
 ## Learning Resource
 - [TechWorld with Nana YouTube video](https://www.youtube.com/watch?v=s_o8dwzRlu4&pp=ygU0S3ViZXJuZXRlcyBDcmFzaCBDb3Vyc2UgZm9yIEFic29sdXRlIEJlZ2lubmVycyBbTkVXXQ%3D%3D)
